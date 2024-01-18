@@ -293,7 +293,7 @@ func (s *Sender) GetUsername() string {
 		"senderid": s.SenderID,
 	}
 	body, _ := json.Marshal(params)
-	resp, _ := httplib.Post(localUrl()+"/getUsername").Header("Content-Type", "application/json").Body(body).Bytes()
+	resp, _ := httplib.Post(localUrl()+"/getUserName").Header("Content-Type", "application/json").Body(body).Bytes()
 	rlt, _ := jsonparser.GetString(resp, "data")
 	return rlt
 }
